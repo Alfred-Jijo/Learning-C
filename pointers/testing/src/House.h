@@ -10,10 +10,11 @@ char* GetHouseName(House* pHouse) {
 }
 
 int GetNumOfBedrooms(House* pHouse) {
-	return pHouse ->NumOfBedrooms;
+	return pHouse->NumOfBedrooms;
 }
 
 int GetNumOfBathrooms(House* pHouse) {
-	return pHouse ->NumOfBathrooms;
+	return pHouse->NumOfBathrooms;
 }
+
 
