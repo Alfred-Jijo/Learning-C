@@ -1,4 +1,5 @@
 
+#include <cstdio>
 typedef struct {
 	int NumOfBedrooms;
 	int NumOfBathrooms;
@@ -15,6 +16,10 @@ int GetNumOfBedrooms(House* pHouse) {
 
 int GetNumOfBathrooms(House* pHouse) {
 	return pHouse->NumOfBathrooms;
+}
+
+void SetHouseName(const House* pHouse, const char* HouseName) {
+	printf("Not Implemented\n");
 }
 
 
