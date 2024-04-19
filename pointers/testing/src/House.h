@@ -1,25 +1,19 @@
+#include <stdio.h>
 
-#include <cstdio>
-typedef struct {
+typedef struct House {
 	int NumOfBedrooms;
 	int NumOfBathrooms;
 	char* HouseName;
 } House;
 
-char* GetHouseName(House* pHouse) {
-	return pHouse->HouseName;
-}
 
-int GetNumOfBedrooms(House* pHouse) {
-	return pHouse->NumOfBedrooms;
+void ShowHouse(House* pHouse) {
+	printf("House Name: %s\nNumber of Bedrooms: %d\nNumber of Bathrooms: %d\n",
+			pHouse->HouseName, pHouse->NumOfBedrooms, pHouse->NumOfBathrooms	
+	);
 }
-
-int GetNumOfBathrooms(House* pHouse) {
-	return pHouse->NumOfBathrooms;
-}
-
-void SetHouseName(const House* pHouse, const char* HouseName) {
-	printf("Not Implemented\n");
+void SetHouseName(House* pHouse, char* HouseName) {
+	pHouse->HouseName = HouseName;
 }
 
 
