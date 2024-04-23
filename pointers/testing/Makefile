@@ -1,4 +1,4 @@
-NAME = testing
+NAME = learning
 VERSION = 0.0.1
 PREFIX ?= $(HOME)/.local
 
