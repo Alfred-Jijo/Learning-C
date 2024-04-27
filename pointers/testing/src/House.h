@@ -3,17 +3,10 @@
 typedef struct House {
 	int NumOfBedrooms;
 	int NumOfBathrooms;
-	char* HouseName;
+	char* HouseNum;
 } House;
 
-
-void ShowHouse(House* pHouse) {
-	printf("House Name: %s\nNumber of Bedrooms: %d\nNumber of Bathrooms: %d\n",
-		pHouse->HouseName, pHouse->NumOfBedrooms, pHouse->NumOfBathrooms	
-	);
-}
-void SetHouseName(House* pHouse, char* HouseName) {
-	pHouse->HouseName = HouseName;
-}
-
+void ShowHouse(House*);
+void SetHouse(House*, int, int, char*);
+void SetHouseName(House*, char*);
 

@@ -11,16 +11,17 @@ int main(int argc, char* argv[]) {
 		perror("Usage: out <NumberOfBedrooms> <NumberOfBathrooms> \"<HouseName>\"\n");
 		return EXIT_FAILURE;
 	}
-	
-	House house = {
+
+	House house;
+
+	SetHouse(
+		&house,
 		atoi(argv[1]),
 		atoi(argv[2]),
-		"N/A",
-	};
+		argv[3]
+	);	
 
-	ShowHouse(&house);
-	SetHouseName(&house, argv[3]);
-	ShowHouse(&house);
+	
 }
 
 
