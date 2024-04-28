@@ -7,7 +7,6 @@ void ShowHouse(House* pHouse) {
 	);
 }
 
-
 void SetHouseName(House* pHouse, char* HouseNum) {
     pHouse->HouseNum = HouseNum;
 }
@@ -15,6 +14,7 @@ void SetHouseName(House* pHouse, char* HouseNum) {
 void SetHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum) {
 	pHouse->NumOfBedrooms = NumOfBedrooms;
 	pHouse->NumOfBathrooms = NumOfBathrooms;
+	SetHouseName(pHouse, HouseNum);
 }
 
 

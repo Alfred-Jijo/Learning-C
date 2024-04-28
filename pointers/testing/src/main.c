@@ -20,8 +20,6 @@ int main(int argc, char* argv[]) {
 		atoi(argv[2]),
 		argv[3]
 	);	
-
-	
 }
 
 
