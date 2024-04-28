@@ -14,12 +14,14 @@ int main(int argc, char* argv[]) {
 
 	House house;
 
-	SetHouse(
+	SetHouse (
 		&house,
 		atoi(argv[1]),
 		atoi(argv[2]),
 		argv[3]
-	);	
+	);
+
+	ShowHouse(&house);
 }
 
 

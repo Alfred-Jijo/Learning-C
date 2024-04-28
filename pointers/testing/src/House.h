@@ -4,17 +4,25 @@ typedef struct House {
 	int NumOfBedrooms;
 	int NumOfBathrooms;
 	char* HouseNum;
-
-	void (*ShowHouse_ptr)(House*);
-	void (*SetHouse_ptr)(House*, int, int, char*);
-	void (*SetHouseName_ptr)(House*, char*);
 } House;
 
-void ShowHouse(House*);
-void SetHouse(House*, int, int, char*);
-void SetHouseName(House*, char*);
+void PrintHouse(House*);
+void InitHouse(House*, int, int, char*);
 
-void (*SetHouseName_ptr)(House*, char*) = SetHouseName;
-void (*SetHouse_ptr)(House*, int, int, char*) = SetHouse;
-void (*ShowHouse_ptr)(House*) = ShowHouse;
+void PrintHouse(House* pHouse) {
+	printf("House Name: %s\nNumber of Bedrooms: %d\nNumber of Bathrooms: %d\n",
+		pHouse->HouseNum, pHouse->NumOfBedrooms, pHouse->NumOfBathrooms	
+	);
+}
+
+void InitHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum) {
+	pHouse->NumOfBedrooms = NumOfBedrooms;
+	pHouse->NumOfBathrooms = NumOfBathrooms;
+	pHouse->HouseNum = HouseNum;
+}
+
+
+void (*SetHouse)(House*, int, int, char*) = InitHouse;
+void (*ShowHouse)(House*) = PrintHouse;
+
 
