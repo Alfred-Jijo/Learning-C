@@ -21,7 +21,6 @@ int main(int argc, char* argv[]) {
 		argv[3]
 	);
 
-	ShowHouse(&house);
 }
 
 

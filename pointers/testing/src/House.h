@@ -15,14 +15,14 @@ void PrintHouse(House* pHouse) {
 	);
 }
 
-void InitHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum) {
+void InitHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum, void (*ShowHouse)(House*)) {
 	pHouse->NumOfBedrooms = NumOfBedrooms;
 	pHouse->NumOfBathrooms = NumOfBathrooms;
 	pHouse->HouseNum = HouseNum;
+	ShowHouse(pHouse);
 }
 
 
-void (*SetHouse)(House*, int, int, char*) = InitHouse;
-void (*ShowHouse)(House*) = PrintHouse;
+void (*ShowHouse)(House*) = &PrintHouse;
 
 

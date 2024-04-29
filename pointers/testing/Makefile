@@ -2,7 +2,7 @@ NAME = learning
 VERSION = 0.0.1
 PREFIX ?= $(HOME)/.local
 
-CC ?= cc
+CC ?= gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -Wno-unused-parameter
 
 SRC = lib/ds.c src/main.c
