@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 		atoi(argv[1]),
 		atoi(argv[2]),
 		argv[3],
-		PrintHouse(&house)
+		&PrintHouse
 	);
 
 }
