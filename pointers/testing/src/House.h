@@ -7,7 +7,7 @@ typedef struct House {
 } House;
 
 void PrintHouse(House*);
-void InitHouse(House*, int, int, char*);
+void InitHouse(House*, int, int, char*, void (*PrintHouse)(House*));
 
 void PrintHouse(House* pHouse) {
 	printf("House Name: %s\nNumber of Bedrooms: %d\nNumber of Bathrooms: %d\n",
@@ -15,14 +15,14 @@ void PrintHouse(House* pHouse) {
 	);
 }
 
-void InitHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum, void (*ShowHouse)(House*)) {
+void InitHouse(House* pHouse, int NumOfBedrooms, int NumOfBathrooms, char* HouseNum, void (*PrintHouse)(House*)) {
 	pHouse->NumOfBedrooms = NumOfBedrooms;
 	pHouse->NumOfBathrooms = NumOfBathrooms;
 	pHouse->HouseNum = HouseNum;
-	ShowHouse(pHouse);
+	PrintHouse(pHouse);
 }
 
 
-void (*ShowHouse)(House*) = &PrintHouse;
+void (*PrintHouse)(House*) = &PrintHouse;
 
 
