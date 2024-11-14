@@ -1,27 +1,23 @@
-#include <typedef.h>
-#include <stb_ds.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
-#include "House.h"
+typedef struct {
+	uint8_t cid;
+	int (*add) (int, int);
+} Calculator_t;
 
+int add (int a, int b);
 
-int main(int argc, char* argv[]) {
-	if (argc != 4) {
-		perror("Usage: out <NumberOfBedrooms> <NumberOfBathrooms> \"<HouseName>\"\n");
-		return EXIT_FAILURE;
-	}
+int main(void) {
+	Calculator_t calc = {
+		.cid = 0,
+		.add = &add,
+	};
 
-	House house;
-
-	InitHouse (
-		&house,
-		atoi(argv[1]),
-		atoi(argv[2]),
-		argv[3],
-		&PrintHouse
-	);
-
+	int result = calc.add(1,2);
+	printf("result: %d", result);
 }
 
-
+int add (int a, int b) {
+	return a + b;
+}
